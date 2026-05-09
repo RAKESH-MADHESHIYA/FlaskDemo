@@ -123,6 +123,5 @@ def api_GetUserDetails3():
     user_details = df[df['Customer Id'] == user_id].to_dict(orient='records')
     return {'user_details': user_details}
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=5000)
