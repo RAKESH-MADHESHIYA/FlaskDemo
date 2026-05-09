@@ -116,5 +116,13 @@ def api_GetUserDetails():
     user_details = df[df['Customer Id'] == user_id].to_dict(orient='records')
     return {'user_details': user_details}
 
+@app.route('/api/GetUserDetails3',methods=['POST'])
+def api_GetUserDetails3():
+    df = pd.read_csv('customers100.csv')
+    user_id = request.args.get('user_id')
+    user_details = df[df['Customer Id'] == user_id].to_dict(orient='records')
+    return {'user_details': user_details}
+
+
 if __name__ == '__main__':
     app.run(debug=True)
