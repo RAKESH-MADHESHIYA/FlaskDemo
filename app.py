@@ -1,32 +1,39 @@
 ### routing in flask
 from flask import Flask,request,render_template,redirect,url_for
 import pandas as pd
-
+import logs.MyLogger as MyLogger
+#from logsimport MyLogger
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def hello_world():
+    MyLogger.logging.info('Start Method: hello_world')
     return 'Hello, Rakesh from Flask!'
 
 @app.route('/greet/<name>', methods=['GET'])
 def greet(name):
+    MyLogger.logging.info(f'This is an info message from greet function:{name}')
     return f'Hello, {name}! Welcome to Flask!'
 
 @app.route('/add/<int:num1>/<int:num2>', methods=['GET'])
 def add(num1, num2):
+    MyLogger.logging.warning('This is a warning message')
     result = num1 + num2
     return f'The sum of {num1} and {num2} is {result}.'
 
 @app.route('/result', methods=['POST'])
 def result():
+    MyLogger.logging.error('This is an error message')
     return 'This is a POST request to /result.'
 
 @app.route('/about', methods=['GET', 'POST'])
 def about():
+    MyLogger.logging.critical('This is a critical message')
     return 'This is the about page.'
 
 @app.route('/multiple/<string:comma_separated_numbers>', methods=['GET', 'POST'])
 def multiple(comma_separated_numbers):
+    MyLogger.logging.debug('This is a debug section calculating multiple')
     if request.method == 'POST':
         return 'This is a POST request to /multiple.'
     elif request.method == 'GET':

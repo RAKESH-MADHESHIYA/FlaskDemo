@@ -1,0 +1,9 @@
+2026-05-11 16:27:20-werkzeug-WARNING- * Debugger is active!
+2026-05-11 16:27:20-werkzeug-INFO- * Debugger PIN: 142-583-505
+2026-05-11 16:27:40-root-DEBUG-This is a debug message
+2026-05-11 16:27:40-root-INFO-This is an info message
+2026-05-11 16:27:40-root-WARNING-This is a warning message
+2026-05-11 16:27:40-root-ERROR-This is an error message
+2026-05-11 16:27:40-root-CRITICAL-This is a critical m2026-05-11 16:29:44-werkzeug-INFO- * Restarting with stat
+/May/2026 16:27:40] "GET / HTTP/1.1" 200 -
+2026-05-11 16:29:44-werkzeug-INFO- * Detected change in 'D:\\python\\project\\FlaskDemo\\logs\\loggings.py', reloading
